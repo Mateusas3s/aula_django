@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>ConnectedIn</title>
+	</head>
+	<body>
+		<h1>Bem-Vindo!!!</h1>
+		{% if perfil %}
+		<ul>
+			{% for p in perfil %}
+				<li><a href="{% url 'exibir' p.id %}">{{p.nome}} / {{p.email}}</a></li>
+			{% endfor %}
+		</ul>
+		{% else %}
+			<p>Nenhum Perfil encontrado!!!</p>
+		{% endif %}
+	</body>
+</html>
